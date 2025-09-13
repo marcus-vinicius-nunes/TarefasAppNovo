@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TarefasApp.Infra.Data", "Ta
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TarefasApp.IntegrationTests", "TarefasApp.IntegrationTests\TarefasApp.IntegrationTests.csproj", "{F19C42D2-0B84-448E-801D-804D12901496}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TarefasApp.Infra.Storage", "TarefasApp.Infra.Storage\TarefasApp.Infra.Storage.csproj", "{CDE05321-D7BE-4581-9D12-A4746E626C08}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{F19C42D2-0B84-448E-801D-804D12901496}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F19C42D2-0B84-448E-801D-804D12901496}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F19C42D2-0B84-448E-801D-804D12901496}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDE05321-D7BE-4581-9D12-A4746E626C08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDE05321-D7BE-4581-9D12-A4746E626C08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDE05321-D7BE-4581-9D12-A4746E626C08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDE05321-D7BE-4581-9D12-A4746E626C08}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,6 +70,7 @@ Global
 		{DFA916A4-2A3C-4AD2-B9EA-259AC39A4588} = {89B4491C-A099-44EC-AB82-0F47E84D2A9C}
 		{8039AC37-5F11-4FD1-87BE-A41434E0D230} = {1274ECD9-EE4F-4108-8F6C-0383EE3DD197}
 		{F19C42D2-0B84-448E-801D-804D12901496} = {A3474A06-EB5B-42CA-8644-A76E9906664B}
+		{CDE05321-D7BE-4581-9D12-A4746E626C08} = {1274ECD9-EE4F-4108-8F6C-0383EE3DD197}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A76EC710-6CA2-46BC-976F-A4E3A31893B7}
