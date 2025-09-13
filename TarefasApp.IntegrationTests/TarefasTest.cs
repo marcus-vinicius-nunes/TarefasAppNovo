@@ -8,7 +8,7 @@ namespace TarefasApp.IntegrationTests
         [Fact(Skip = "Não implementado.")]
         public async Task PostTarefas_ReturnsSuccessStatusCode()
         {
-            await Task.CompletedTask;
+            await Task.CompletedTask; 
         }
         [Fact(Skip = "Não implementado.")]
         public async Task PutTarefas_ReturnsSuccessStatusCode()

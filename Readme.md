@@ -7,7 +7,7 @@ Este é um projeto de exemplo chamado TarefasApp, que implementa um sistema de g
 - Gerenciamento de tarefas
 - CRUD de tarefas (Criar, Ler, Atualizar, Deletar)
 - API RESTful para interação com as tarefas
-- Implementação de princípios DDD e TDD para desenvolvimento orientado a testes
+- Implementação de princípios DDD e TDD para desenvolvimento orientado a testes 
 
 ## Tecnologias Utilizadas
 
