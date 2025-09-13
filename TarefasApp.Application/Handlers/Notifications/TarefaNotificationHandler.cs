@@ -1,22 +1,30 @@
-﻿using MediatR;
+﻿using AutoMapper;
+using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TarefasApp.Application.Data;
+using TarefasApp.Infra.Storage.Collections;
+using TarefasApp.Infra.Storage.Persistence;
+
 namespace TarefasApp.Application.Handlers.Notifications
 {
     /// <summary>
     /// Classe para escutar as notificações de tarefas
     /// </summary>
-    public class TarefaNotificationHandler : INotificationHandler<TarefaNotification>
+    public class TarefaNotificationHandler
+   : INotificationHandler<TarefaNotification>
     {
         //atributo
-        private readonly FakeDataStore _fakeDataStore;
-        public TarefaNotificationHandler(FakeDataStore fakeDataStore)
+        private readonly TarefaPersistence _tarefaPersistence;
+        private readonly IMapper _mapper;
+        public TarefaNotificationHandler
+       (TarefaPersistence tarefaPersistence, IMapper mapper)
         {
-            _fakeDataStore = fakeDataStore;
+            _tarefaPersistence = tarefaPersistence;
+            _mapper = mapper;
         }
         public async Task Handle(TarefaNotification notification,
        CancellationToken cancellationToken)
@@ -24,15 +32,20 @@ namespace TarefasApp.Application.Handlers.Notifications
             switch (notification.Action)
             {
                 case TarefaNotificationAction.TarefaCriada:
-                    _fakeDataStore.Add(notification.Tarefa);
+                    _tarefaPersistence.Insert
+                   (_mapper.Map<TarefaCollection>(notification.Tarefa
+                   ));
                     break;
                 case TarefaNotificationAction.TarefaAlterada:
-                    _fakeDataStore.Update(notification.Tarefa);
+                    _tarefaPersistence.Update
+                   (_mapper.Map<TarefaCollection>(notification.Tarefa
+                   ));
                     break;
                 case TarefaNotificationAction.TarefaExcluida:
-                    _fakeDataStore.Delete(notification.Tarefa.Id);
+                    _tarefaPersistence.Delete
+                   (_mapper.Map<TarefaCollection>(notification.Tarefa
+                   ));
                     break;
-
             }
             await Task.CompletedTask;
         }

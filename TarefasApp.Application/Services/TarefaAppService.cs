@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using AutoMapper;
+using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,8 @@ using TarefasApp.Application.Commands.TarefasApp.Application.Commands;
 using TarefasApp.Application.Data;
 using TarefasApp.Application.Dtos;
 using TarefasApp.Application.Interfaces;
+using TarefasApp.Infra.Storage.Persistence;
+
 namespace TarefasApp.Application.Services
 {
     /// <summary>
@@ -17,14 +20,15 @@ namespace TarefasApp.Application.Services
     public class TarefaAppService : ITarefaAppService
     {
         //atributo
+        private readonly TarefaPersistence _tarefaPersistence;
         private readonly IMediator _mediator;
-        private readonly FakeDataStore _fakeDataStore;
-        //construtor para injeção de dependência
-        public TarefaAppService
-       (IMediator mediator, FakeDataStore fakeDataStore)
+        private readonly IMapper _mapper;
+        public TarefaAppService(TarefaPersistence tarefaPersistence,
+       IMediator mediator, IMapper mapper)
         {
+            _tarefaPersistence = tarefaPersistence;
             _mediator = mediator;
-            _fakeDataStore = fakeDataStore;
+            _mapper = mapper;
         }
         public async Task<TarefaDto> Create(TarefaCreateCommand command)
         {
@@ -40,11 +44,13 @@ namespace TarefasApp.Application.Services
         }
         public List<TarefaDto>? GetAll()
         {
-            return _fakeDataStore.GetAll();
+            var result = _tarefaPersistence.FindAll().Result;
+            return _mapper.Map<List<TarefaDto>>(result);
         }
         public TarefaDto? GetById(Guid id)
         {
-            return _fakeDataStore.GetById(id);
+            var result = _tarefaPersistence.Find(id).Result;
+            return _mapper.Map<TarefaDto>(result);
         }
     }
 }

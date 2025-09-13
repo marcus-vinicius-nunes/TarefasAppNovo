@@ -12,13 +12,14 @@ namespace TarefasApp.Domain.Interfaces.Repositories
     /// <typeparam name="TEntity">Representa o tipo da entidade</typeparam>
     /// <typeparam name="TKey">Representa o tipo da chave</typeparam>
     public interface IBaseRepository<TEntity, TKey> : IDisposable
-    where TEntity : class
+        where TEntity : class
     {
         Task Add(TEntity entity);
         Task Update(TEntity entity);
         Task Delete(TEntity entity);
+
         Task<List<TEntity>>? GetAll();
         Task<TEntity>? GetById(TKey id);
     }
-}
 
+}

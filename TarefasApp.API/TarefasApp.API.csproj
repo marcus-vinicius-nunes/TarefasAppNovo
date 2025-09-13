@@ -3,7 +3,7 @@
  <TargetFramework>net8.0</TargetFramework>
  <Nullable>enable</Nullable>
  <ImplicitUsings>enable</ImplicitUsings>
- <InvariantGlobalization>true</InvariantGlobalization>
+ <InvariantGlobalization>false</InvariantGlobalization>
 
  <!-- Geração da documentação do código -->
  <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -19,6 +19,8 @@
  </ItemGroup>
  <ItemGroup>
    <ProjectReference Include="..\TarefasApp.Application\TarefasApp.Application.csproj" />
+   <ProjectReference Include="..\TarefasApp.Domain\TarefasApp.Domain.csproj" />
    <ProjectReference Include="..\TarefasApp.Infra.Data\TarefasApp.Infra.Data.csproj" />
+   <ProjectReference Include="..\TarefasApp.Infra.Storage\TarefasApp.Infra.Storage.csproj" />
  </ItemGroup>
 </Project>

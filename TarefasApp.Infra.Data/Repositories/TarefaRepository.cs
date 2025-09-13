@@ -6,19 +6,20 @@ using System.Threading.Tasks;
 using TarefasApp.Domain.Entities;
 using TarefasApp.Domain.Interfaces.Repositories;
 using TarefasApp.Infra.Data.Contexts;
+
 namespace TarefasApp.Infra.Data.Repositories
 {
     /// <summary>
     /// Implementação do repositório de tarefas
     /// </summary>
-    public class TarefaRepository
-   : BaseRepository<Tarefa, Guid?>, ITarefaRepository
+    public class TarefaRepository : BaseRepository<Tarefa, Guid>, ITarefaRepository
     {
         private readonly DataContext? _dataContext;
-        public TarefaRepository(DataContext? dataContext)
-       : base(dataContext)
+
+        public TarefaRepository(DataContext? dataContext) : base(dataContext)
         {
             _dataContext = dataContext;
         }
     }
 }
+
