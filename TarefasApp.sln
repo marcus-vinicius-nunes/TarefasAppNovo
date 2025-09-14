@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36414.22 d17.14
+VisualStudioVersion = 17.14.36414.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TarefasApp.API", "TarefasApp.API\TarefasApp.API.csproj", "{BF4BE981-F281-475C-B035-506FE1D17E97}"
 EndProject
@@ -26,6 +26,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TarefasApp.IntegrationTests", "TarefasApp.IntegrationTests\TarefasApp.IntegrationTests.csproj", "{F19C42D2-0B84-448E-801D-804D12901496}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TarefasApp.Infra.Storage", "TarefasApp.Infra.Storage\TarefasApp.Infra.Storage.csproj", "{CDE05321-D7BE-4581-9D12-A4746E626C08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TarefasApp.Infra.Messages", "TarefasApp.Infra.Messages\TarefasApp.Infra.Messages.csproj", "{F969A49C-BF7A-426B-A881-E51F33865DCB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{CDE05321-D7BE-4581-9D12-A4746E626C08}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDE05321-D7BE-4581-9D12-A4746E626C08}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDE05321-D7BE-4581-9D12-A4746E626C08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F969A49C-BF7A-426B-A881-E51F33865DCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F969A49C-BF7A-426B-A881-E51F33865DCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F969A49C-BF7A-426B-A881-E51F33865DCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F969A49C-BF7A-426B-A881-E51F33865DCB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -71,6 +77,7 @@ Global
 		{8039AC37-5F11-4FD1-87BE-A41434E0D230} = {1274ECD9-EE4F-4108-8F6C-0383EE3DD197}
 		{F19C42D2-0B84-448E-801D-804D12901496} = {A3474A06-EB5B-42CA-8644-A76E9906664B}
 		{CDE05321-D7BE-4581-9D12-A4746E626C08} = {1274ECD9-EE4F-4108-8F6C-0383EE3DD197}
+		{F969A49C-BF7A-426B-A881-E51F33865DCB} = {1274ECD9-EE4F-4108-8F6C-0383EE3DD197}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A76EC710-6CA2-46BC-976F-A4E3A31893B7}

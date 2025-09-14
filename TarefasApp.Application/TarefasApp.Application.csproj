@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TarefasApp.Domain\TarefasApp.Domain.csproj" />
+    <ProjectReference Include="..\TarefasApp.Infra.Messages\TarefasApp.Infra.Messages.csproj" />
     <ProjectReference Include="..\TarefasApp.Infra.Storage\TarefasApp.Infra.Storage.csproj" />
   </ItemGroup>
 

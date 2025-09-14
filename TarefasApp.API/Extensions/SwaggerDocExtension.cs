@@ -21,9 +21,9 @@ namespace TarefasApp.API.Extensions
                         Version = "1.0",
                         Contact = new OpenApiContact
                         {
-                            Name = "COTI Informática",
-                            Email = "contato@cotiinformatica.com.br",
-                            Url = new Uri("http://wwww.cotiinformatica.com.br")
+                            Name = "Marcus Silva",
+                            Email = "vinicius_rj87@yahoo.com.br",
+                            Url = new Uri("https://github.com/marcus-vinicius-nunes/")
                         }
                     });
 
