@@ -22,12 +22,11 @@ namespace TarefasApp.Application.Extensions
             //configurando o MediatR
             services.AddMediatR(cfg =>
             {
-                cfg.RegisterServicesFromAssemblies
-               (AppDomain.CurrentDomain.GetAssemblies());
+                cfg.RegisterServicesFromAssemblies(typeof(TarefaAppService).Assembly);
             });
 
             //configurando o AutoMapper
-            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            services.AddAutoMapper(typeof(TarefaAppService).Assembly);
 
 
             //registrando as interfaces/classes de serviço da aplicação

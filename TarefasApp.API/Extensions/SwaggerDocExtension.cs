@@ -17,7 +17,7 @@ namespace TarefasApp.API.Extensions
                     options.SwaggerDoc("v1", new OpenApiInfo
                     {
                         Title = "TarefasApp - Treinamento C# Avançado Formação Arquiteto",
-                        Description = "API para controle de tarefas de usuarios.",
+                        Description = "API para controle de tarefas.",
                         Version = "1.0",
                         Contact = new OpenApiContact
                         {

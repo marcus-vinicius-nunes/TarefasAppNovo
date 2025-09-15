@@ -25,7 +25,9 @@ namespace TarefasApp.API.Controllers
         public async Task<IActionResult> Post(TarefaCreateCommand command)
         {
             var dto = await _tarefaAppService.Create(command);
-            return StatusCode(201, dto);
+            if (dto == null)
+                return BadRequest("Não foi possível criar a tarefa");
+            return CreatedAtAction(nameof(GetById), new { id = dto.Id }, dto);
         }
         /// <summary>
         /// Serviço para atualiação de tarefas.
@@ -35,19 +37,24 @@ namespace TarefasApp.API.Controllers
         public async Task<IActionResult> Put(TarefaUpdateCommand command)
         {
             var dto = await _tarefaAppService.Update(command);
-            return StatusCode(200, dto);
+            if (dto == null)
+                return NotFound("Tarefa não encontrada");
+
+            return Ok(dto);
         }
         /// <summary>
         /// Serviço para exclusão / inativação de tarefas.
         /// </summary>
         [HttpDelete("{id}")]
         [ProducesResponseType(typeof(TarefaDto), 200)]
-        public async Task<IActionResult> Delete(Guid id)
+        public async Task<IActionResult> Delete([FromRoute] Guid id)
         {
             var command = new TarefaDeleteCommand { Id = id };
             var dto = await _tarefaAppService.Delete(command);
+            if (dto == null)
+                return NotFound("Tarefa não encontrada");
 
-            return StatusCode(200, dto);
+            return Ok(dto);
         }
         /// <summary>
         /// Serviço para consulta de tarefas.
@@ -57,16 +64,18 @@ namespace TarefasApp.API.Controllers
         public IActionResult GetAll()
         {
             var dtos = _tarefaAppService.GetAll();
-            return StatusCode(200, dtos);
+            return Ok(dtos);
         }/// <summary>
          /// Serviço para consulta de tarefa por id.
          /// </summary>
         [HttpGet("{id}")]
         [ProducesResponseType(typeof(TarefaDto), 200)]
-        public IActionResult GetById(Guid id)
+        public IActionResult GetById([FromRoute] Guid id)
         {
             var dto = _tarefaAppService.GetById(id);
-            return StatusCode(200, dto);
+            if (dto == null)
+                return NotFound("Tarefa não encontrada");
+            return Ok(dto);
         }
     }
 }

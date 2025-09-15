@@ -22,8 +22,7 @@ namespace TarefasApp.Infra.Storage.Extensions
             var mongodbSettings = new MongoDBSettings();
             //ler as configurações do /appsettings.json
             new ConfigureFromConfigurationOptions<MongoDBSettings>
-            (configuration.GetSection("MongoDB"))
-            .Configure(mongodbSettings);
+            (configuration.GetSection("MongoDB")).Configure(mongodbSettings);
             //registrando as configurações
             services.AddSingleton(mongodbSettings);
             services.AddSingleton<MongoDBContext>();

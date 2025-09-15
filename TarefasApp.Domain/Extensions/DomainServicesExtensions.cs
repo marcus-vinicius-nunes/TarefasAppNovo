@@ -13,8 +13,7 @@ namespace TarefasApp.Domain.Extensions
         public static IServiceCollection AddDomainServices
        (this IServiceCollection services)
         {
-            services.AddTransient
-           <ITarefaDomainService, TarefaDomainService>();
+            services.AddTransient<ITarefaDomainService, TarefaDomainService>();
             return services;
         }
     }

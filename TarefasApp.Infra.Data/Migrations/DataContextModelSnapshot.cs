@@ -15,7 +15,7 @@ namespace TarefasApp.Infra.Data.Migrations
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
-#pragma warning disable 612, 618
+        #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "9.0.9")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
@@ -53,7 +53,7 @@ namespace TarefasApp.Infra.Data.Migrations
 
                     b.ToTable("TAREFA", (string)null);
                 });
-#pragma warning restore 612, 618
+        #pragma warning restore 612, 618
         }
     }
 }

@@ -87,8 +87,7 @@ namespace TarefasApp.Application.Handlers.Requests
        CancellationToken cancellationToken)
         {
             //Excluir os dados no domínio
-            var tarefa = await _tarefaDomainService
-           .GetById(request.Id.Value);
+            var tarefa = await _tarefaDomainService.GetById(request.Id.Value);
             await _tarefaDomainService.Delete(tarefa);
             //Gerar uma notificação para que os dados
             //sejam replicados em um banco de consulta

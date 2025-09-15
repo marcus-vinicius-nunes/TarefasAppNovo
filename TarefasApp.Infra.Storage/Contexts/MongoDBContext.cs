@@ -29,16 +29,13 @@ namespace TarefasApp.Infra.Storage.Contexts
             if (_mongoDBSettings.IsSSL)
                 mongoClientSettings.SslSettings = new SslSettings
                 {
-                    EnabledSslProtocols = System.Security
-               .Authentication.SslProtocols.Tls12
+                    EnabledSslProtocols = System.Security.Authentication.SslProtocols.Tls12
                 };
             //conectando com o banco de dados
             var mongoClient = new MongoClient(mongoClientSettings);
-            _mongoDatabase = mongoClient
-           .GetDatabase(_mongoDBSettings.Database);
+            _mongoDatabase = mongoClient.GetDatabase(_mongoDBSettings.Database);
         }
         //Mapeamento das collections do banco
-        public IMongoCollection<TarefaCollection> Tarefa
-        => _mongoDatabase.GetCollection<TarefaCollection>("Tarefa");
+        public IMongoCollection<TarefaCollection> Tarefa => _mongoDatabase.GetCollection<TarefaCollection>("Tarefa");
     }
 }

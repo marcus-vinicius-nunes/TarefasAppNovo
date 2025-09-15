@@ -18,16 +18,11 @@ namespace TarefasApp.Infra.Data.Repositories
         private readonly DataContext _dataContext;
         protected BaseRepository(DataContext dataContext)
        => _dataContext = dataContext;
-        public async virtual Task Add(TEntity entity)
-        => await _dataContext.AddAsync(entity);
-        public async virtual Task Update(TEntity entity)
-        => _dataContext.Update(entity);
-        public async virtual Task Delete(TEntity entity)
-        => _dataContext.Remove(entity);
-        public async virtual Task<List<TEntity>>? GetAll()
-        => await _dataContext.Set<TEntity>().ToListAsync();
-        public async virtual Task<TEntity>? GetById(TKey id)
-        => await _dataContext.Set<TEntity>().FindAsync(id);
+        public async virtual Task Add(TEntity entity) => await _dataContext.AddAsync(entity);
+        public async virtual Task Update(TEntity entity) => _dataContext.Update(entity);
+        public async virtual Task Delete(TEntity entity) => _dataContext.Remove(entity);
+        public async virtual Task<List<TEntity>>? GetAll() => await _dataContext.Set<TEntity>().ToListAsync();
+        public async virtual Task<TEntity>? GetById(TKey id) => await _dataContext.Set<TEntity>().FindAsync(id);
         public void Dispose() => _dataContext.Dispose();
     }
 }

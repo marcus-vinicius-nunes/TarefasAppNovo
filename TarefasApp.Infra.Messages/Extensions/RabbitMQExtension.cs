@@ -22,8 +22,7 @@ namespace TarefasApp.Infra.Messages.Extensions
             var rabbitMQSettings = new RabbitMQSettings();
 
             //ler as configurações do /appsettings.json
-            new ConfigureFromConfigurationOptions<RabbitMQSettings>
-                (configuration.GetSection("RabbitMQ")).Configure(rabbitMQSettings);
+            new ConfigureFromConfigurationOptions<RabbitMQSettings>(configuration.GetSection("RabbitMQ")).Configure(rabbitMQSettings);
 
             services.AddSingleton(rabbitMQSettings);
 
@@ -34,8 +33,7 @@ namespace TarefasApp.Infra.Messages.Extensions
             var emailSettings = new EmailSettings();
 
             //ler as configurações do /appsettings.json
-            new ConfigureFromConfigurationOptions<EmailSettings>
-                (configuration.GetSection("Mail")).Configure(emailSettings);
+            new ConfigureFromConfigurationOptions<EmailSettings>(configuration.GetSection("Mail")).Configure(emailSettings);
 
             services.AddSingleton(emailSettings);
 

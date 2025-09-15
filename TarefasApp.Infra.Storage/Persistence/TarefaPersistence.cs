@@ -29,6 +29,11 @@ namespace TarefasApp.Infra.Storage.Persistence
         }
         public async Task Delete(TarefaCollection tarefa)
         {
+            if (tarefa == null || tarefa.Id == Guid.Empty)
+            {
+                return;
+            }
+
             var filter = Builders<TarefaCollection>.Filter.Eq(t => t.Id, tarefa.Id);
             await _mongoDBContext.Tarefa.DeleteOneAsync(filter);
         }

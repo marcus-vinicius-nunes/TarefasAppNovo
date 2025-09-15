@@ -20,9 +20,7 @@ namespace TarefasApp.Infra.Data.Extensions
         (this IServiceCollection services, IConfiguration configuration)
         {
             //injeção de dependência do DataContext
-            services.AddDbContext<DataContext>
-            (options => options.UseSqlServer
-           (configuration.GetConnectionString("BDTarefasApp")));
+            services.AddDbContext<DataContext>(options => options.UseSqlServer(configuration.GetConnectionString("BDTarefasApp")));
             //injeção de dependência do UnitOfWork
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             return services;

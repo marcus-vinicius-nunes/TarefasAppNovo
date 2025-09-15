@@ -32,19 +32,13 @@ namespace TarefasApp.Application.Handlers.Notifications
             switch (notification.Action)
             {
                 case TarefaNotificationAction.TarefaCriada:
-                    _tarefaPersistence.Insert
-                   (_mapper.Map<TarefaCollection>(notification.Tarefa
-                   ));
+                    _tarefaPersistence.Insert(_mapper.Map<TarefaCollection>(notification.Tarefa));
                     break;
                 case TarefaNotificationAction.TarefaAlterada:
-                    _tarefaPersistence.Update
-                   (_mapper.Map<TarefaCollection>(notification.Tarefa
-                   ));
+                    _tarefaPersistence.Update(_mapper.Map<TarefaCollection>(notification.Tarefa));
                     break;
                 case TarefaNotificationAction.TarefaExcluida:
-                    _tarefaPersistence.Delete
-                   (_mapper.Map<TarefaCollection>(notification.Tarefa
-                   ));
+                    _tarefaPersistence.Delete(_mapper.Map<TarefaCollection>(notification.Tarefa));
                     break;
             }
             await Task.CompletedTask;
