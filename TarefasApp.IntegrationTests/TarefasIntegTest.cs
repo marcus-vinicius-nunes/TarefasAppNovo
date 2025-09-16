@@ -10,7 +10,7 @@ namespace TarefasApp.IntegrationTests
     /// <summary>
     /// Testes de integração do ENDPOINT da API de tarefas
     /// </summary>
-    public class TarefasTest
+    public class TarefasIntegTest
     {
         [Fact]
         public async Task PostTarefas_ReturnsSuccessStatusCode()
